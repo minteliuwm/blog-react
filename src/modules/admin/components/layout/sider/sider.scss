@@ -1,0 +1,39 @@
+.sider {
+	width: 200px;
+	background: #4a4c5e;
+	box-sizing: border-box;
+
+	.menu {
+		padding-top: 16px;
+	}
+}
+
+:global {
+	.custom-menu {
+		border-right: none;
+		background: inherit;
+
+		.ant-menu-item {
+			padding-left: 32px;
+			margin: 0 !important;
+		}
+
+		.ant-menu-item:hover {
+			background-color: #2f3240;
+		}
+
+		.ant-menu-item-selected {
+			background-color: #1a1d2a !important;
+		}
+
+		.ant-menu-item>a {
+			color: #fff;
+		}
+
+		.menu-icon {
+			width: 14px;
+			height: 14px;
+			display: inline-block;
+		}
+	}
+}

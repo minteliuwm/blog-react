@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { routerRedux, Route } from 'dva/router';
-import App from './pages/app';
+import App from './modules/app';
 import H from 'history';
 
 const { ConnectedRouter } = routerRedux;

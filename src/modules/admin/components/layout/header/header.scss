@@ -1,0 +1,30 @@
+.header {
+	height: 56px;
+	line-height: 56px;
+	min-height: 56px;
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+	background: #2f3240;
+	padding-right: 36px;
+
+	.left {
+		display: flex;
+		width: 200px;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.right {
+		display: flex;
+		cursor: pointer;
+
+		.user {
+			font-family: PingFangSC-Regular;
+			font-size: 14px;
+			color: #fff;
+			letter-spacing: 0;
+			height: 36px;
+		}
+	}
+}
