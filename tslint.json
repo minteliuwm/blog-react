@@ -1,0 +1,13 @@
+{
+	"extends": "tslint-config-alloy",
+	"linterOptions": {
+		"exclude": ["**/node_modules/**"]
+	},
+	"rules": {
+		"indent": [true, "tabs", 2],
+		"no-implicit-dependencies": false,
+		"ordered-imports": false,
+		"member-access": false,
+		"no-magic-numbers": false
+	}
+}

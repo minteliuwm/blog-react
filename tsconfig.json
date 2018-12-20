@@ -1,0 +1,13 @@
+{
+	"compilerOptions": {
+		"module": "ESNext",
+		"moduleResolution": "node",
+		"target": "es6",
+		"allowSyntheticDefaultImports": true,
+		"baseUrl": "src",
+		"sourceMap": true,
+		"outDir": "ts-build",
+		"jsx": "preserve",
+		"strict": true
+	}
+}
