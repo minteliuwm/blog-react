@@ -7,4 +7,4 @@ const app = dva({
 
 app.router(require('./router').default);
 
-app.start("#app");
+app.start('#app');

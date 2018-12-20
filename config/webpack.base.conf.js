@@ -1,4 +1,5 @@
 'use strict';
+const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -27,7 +28,14 @@ module.exports = {
 			use: [{
 				loader: "style-loader"
 			}, {
-				loader: "css-loader"
+				loader: "typings-for-css-modules-loader",
+				options: {
+					modules: true,
+					namedExport: true,
+					camelCase: true,
+					sass: true,
+					localIdentName: "[local]_[hash:base64:5]"
+				}
 			}, {
 				loader: "sass-loader"
 			}]
@@ -64,6 +72,7 @@ module.exports = {
 			filename: 'index.html',
 			template: 'index.html',
 			inject: 'body'
-		})
+		}),
+		new webpack.WatchIgnorePlugin([/css\.d\.ts$/])
 	]
 };

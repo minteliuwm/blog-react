@@ -8,6 +8,7 @@
 		"no-implicit-dependencies": false,
 		"ordered-imports": false,
 		"member-access": false,
-		"no-magic-numbers": false
+		"no-magic-numbers": false,
+		"no-var-requires": false
 	}
 }
