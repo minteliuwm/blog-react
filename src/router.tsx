@@ -11,6 +11,6 @@ const RouterConfig = ({ history }: { history: H.History }) => {
 			<Route path="/" component={App} />
 		</ConnectedRouter>
 	);
-}
+};
 
 export default RouterConfig;
