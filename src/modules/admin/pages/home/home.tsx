@@ -2,7 +2,11 @@ import React, { SFC, Dispatch } from 'react';
 import { connect } from 'dva';
 import { Switch, Route, Redirect, routerRedux, RouteComponentProps } from 'dva/router';
 import { Layout } from 'antd';
-import { Header, Sider } from '../../components/layout';
+import { Header, Sider, Breadcrumb } from '../../components/layout';
+
+import Dashboard from '../dashboard/dashboard';
+import Article from '../article/article';
+import Label from '../label/label';
 
 import { menuConstant } from '../../constants';
 
@@ -33,11 +37,12 @@ const AdminHome: SFC<IProps> = ({ location, match, dispatch }) => {
 			<Layout className={styles.middle}>
 				<Sider {...siderProps} />
 				<Layout className={styles.right}>
+					<Breadcrumb />
 					<div id="content" className={styles.content}>
 						<Switch>
-							<Route path={`${match.path}/dashboard`} exact />
-							<Route path={`${match.path}/article`} exact />
-							<Route path={`${match.path}/label`} exact />
+							<Route path={`${match.path}/dashboard`} exact component={Dashboard} />
+							<Route path={`${match.path}/article`} exact component={Article} />
+							<Route path={`${match.path}/label`} exact component={Label} />
 							<Redirect to={`${match.path}/dashboard`} />
 						</Switch>
 					</div>

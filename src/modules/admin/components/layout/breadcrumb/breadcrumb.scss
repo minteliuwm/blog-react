@@ -1,0 +1,20 @@
+.breadcrumb {
+	min-height: 48px;
+	line-height: 48px;
+	font-family: PingFangSC-Regular;
+	font-size: 18px;
+	color: #303948;
+	letter-spacing: 0;
+}
+
+.icon {
+	display: flex;
+	align-items: center;
+	width: 14px;
+}
+
+.name {
+	display: flex;
+	align-items: center;
+	color: #303948;
+}
