@@ -25,6 +25,7 @@ module.exports = {
 			loader: 'babel-loader'
 		}, {
 			test: /\.scss$/,
+			exclude: [path.resolve(__dirname, '../src/scss')],
 			use: [{
 				loader: "style-loader"
 			}, {
@@ -39,6 +40,10 @@ module.exports = {
 			}, {
 				loader: "sass-loader"
 			}]
+		}, {
+			test: /\.scss$/,
+			include: [path.resolve(__dirname, '../src/scss')],
+			loaders: ['style-loader', 'css-loader', 'sass-loader']
 		}, {
 			test: /\.less$/,
 			use: [{
