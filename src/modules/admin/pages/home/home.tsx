@@ -6,6 +6,7 @@ import { Header, Sider, Breadcrumb } from '../../components/layout';
 
 import Dashboard from '../dashboard/dashboard';
 import Article from '../article/article';
+import NewArticle from '../article/new';
 import Label from '../label/label';
 
 import { menuConstant } from '../../constants';
@@ -42,6 +43,7 @@ const AdminHome: SFC<IProps> = ({ location, match, dispatch }) => {
 						<Switch>
 							<Route path={`${match.path}/dashboard`} exact component={Dashboard} />
 							<Route path={`${match.path}/article`} exact component={Article} />
+							<Route path={`${match.path}/article/new`} exact component={NewArticle} />
 							<Route path={`${match.path}/label`} exact component={Label} />
 							<Redirect to={`${match.path}/dashboard`} />
 						</Switch>

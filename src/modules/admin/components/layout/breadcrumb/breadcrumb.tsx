@@ -1,18 +1,18 @@
-import React, { SFC } from 'react';
+import React, { SFC, Dispatch } from 'react';
 import { connect } from 'dva';
-import H from 'history';
+import { routerRedux } from 'dva/router';
 
 import styles from './breadcrumb.scss';
 import { CommonsState } from 'models/commons';
 
 interface IProps {
 	commons: CommonsState;
-	history: H.History;
+	dispatch: Dispatch<{}>;
 }
 
-const Bread: SFC<IProps> = ({ commons, history }) => {
+const Bread: SFC<IProps> = ({ commons, dispatch }) => {
 	const clickToBack = () => {
-		history.goBack();
+		dispatch(routerRedux.goBack());
 	};
 
 	return commons.breadcrumb.canBack ? (
