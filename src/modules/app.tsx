@@ -1,15 +1,15 @@
 import React from 'react';
 import { Route, Switch, Redirect } from 'react-router';
 
-import Home from './home/home';
+import Blog from './blog/blog';
 import Admin from './admin/admin';
 
 const App = () => {
 	return (
 		<Switch>
-			<Route exact path="/home" component={Home} />
+			<Route path="/blog" component={Blog} />
 			<Route path="/admin" component={Admin} />
-			<Redirect to="/home" />
+			<Redirect to="/blog" />
 		</Switch>
 	);
 };
