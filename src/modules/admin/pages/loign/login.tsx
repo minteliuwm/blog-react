@@ -1,8 +1,10 @@
 import React, { Dispatch } from 'react';
 import { connect } from 'dva';
 import { routerRedux } from 'dva/router';
-import { Form, Icon, Input, Checkbox, Button } from 'antd';
 
+import Cookies from 'js-cookie';
+
+import { Form, Icon, Input, Checkbox, Button } from 'antd';
 import styles from './login.scss';
 import { FormComponentProps } from '_antd@3.11.2@antd/lib/form';
 
@@ -64,6 +66,7 @@ class LoginForm extends React.Component<IProps, {}> {
 				return;
 			}
 			// TODO 登录请求
+			Cookies.set('token', 'test');
 			const isRemember = Number(values.remember) === 1;
 			localStorage.setItem(REMEMBER_PWD, Number(values.remember).toString());
 			localStorage.setItem(LOGIN_USER, values.username);

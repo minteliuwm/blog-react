@@ -10,6 +10,7 @@ import NewArticle from '../article/new';
 import Label from '../label/label';
 
 import { menuConstant } from '../../constants';
+import Cookies from 'js-cookie';
 
 import styles from './home.scss';
 
@@ -23,6 +24,7 @@ const AdminHome: SFC<IProps> = ({ location, match, dispatch }) => {
 		location,
 		user: 'admin',
 		logout() {
+			Cookies.remove('token');
 			dispatch(routerRedux.push('/admin/login'));
 		}
 	};
