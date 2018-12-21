@@ -1,0 +1,17 @@
+.edit {
+	height: 100%;
+}
+
+.footer {
+	display: flex;
+}
+
+:global {
+	.cm-s-paper {
+		height: 400px;
+		max-height: 400px;
+	}
+	.CodeMirror-fullscreen {
+		max-height: 100%;
+	}
+}

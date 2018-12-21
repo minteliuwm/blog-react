@@ -1,4 +1,4 @@
-import React, { Dispatch } from 'react';
+import React, { Dispatch, ChangeEvent } from 'react';
 import { connect } from 'dva';
 
 import SimpleMDE from 'simplemde';
@@ -7,12 +7,27 @@ import highlight from 'highlight.js';
 import uuid from 'uuid';
 import 'simplemde/dist/simplemde.min.css';
 
+import { Input, Select, Button } from 'antd';
+import styles from './new.scss';
+
+const Option = Select.Option;
+
 interface IProps {
 	dispatch: Dispatch<{}>;
 }
 
-class NewArticle extends React.Component<IProps, {}> {
+const initialState = {
+	title: '',
+	label: [],
+	tag: [],
+	type: '原创'
+};
+
+type State = Readonly<typeof initialState>;
+
+class NewArticle extends React.Component<IProps, {}, State> {
 	editor?: SimpleMDE;
+	readonly state: State = initialState;
 
 	componentDidMount() {
 		this.props.dispatch({
@@ -57,10 +72,48 @@ class NewArticle extends React.Component<IProps, {}> {
 
 	render() {
 		return (
-			<div>
-				<textarea id="editor"></textarea>
+			<div className={styles.edit}>
+				<div className="u-item">
+					<Input placeholder="请输入文章标题" value={this.state.title} onChange={this.handleChangeTitle.bind(this)} />
+				</div>
+				<div>
+					<textarea id="editor"></textarea>
+				</div>
+				<div className={styles.footer}>
+					<div className="u-item">
+						<div className="u-item-label">标签</div>
+					</div>
+					<div className="u-item">
+						<div className="u-item-label">分类</div>
+					</div>
+					<div className="u-item">
+						<div className="u-item-label">类型</div>
+						<Select value={this.state.type} onChange={this.handleChangeType.bind(this)}>
+							<Option value="原创">原创</Option>
+							<Option value="转载">转载</Option>
+							<Option value="翻译">翻译</Option>
+						</Select>
+					</div>
+				</div>
+				<Button type="primary" onClick={this.submit.bind(this)}>发布</Button>
 			</div>
 		);
+	}
+
+	private handleChangeTitle(e: ChangeEvent<HTMLInputElement>) {
+		this.setState({
+			title: e.target.value
+		});
+	}
+
+	private handleChangeType(v: string) {
+		this.setState({
+			type: v
+		});
+	}
+
+	private submit() {
+		console.log(this.state);
 	}
 }
 

@@ -1,0 +1,16 @@
+.u {
+	&-item {
+		display: flex;
+		height: 48px;
+		align-items: center;
+
+		&-label {
+			font-size: 14px;
+			margin-right: 16px;
+		}
+
+		.ant-input {
+			width: 300px;
+		}
+	}
+}
